@@ -1,0 +1,5 @@
+API:
+Flags:
+https://www.countryflagsapi.com/
+Countries:
+https://servicodados.ibge.gov.br/api/v1/paises
