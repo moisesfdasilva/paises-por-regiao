@@ -1,5 +1,5 @@
 import React from 'react';
-import getCountries from '../services/getCountries';
+import getCountriesData from '../services/getCountriesData';
 
 class Continent extends React.Component {
   state = {
@@ -8,12 +8,13 @@ class Continent extends React.Component {
   }
 
   async componentDidMount() {
-    const countriesData = await getCountries();
+    const countriesData = await getCountriesData();
     this.setState({ 
       countriesData,
       isLoading: false,
+      ids: [],
     });
-  }
+  };
 
   render() {
     const { countriesData, isLoading } = this.state;
@@ -22,9 +23,14 @@ class Continent extends React.Component {
     return (
       <main>
         <h1>Ver Países Pelo Continente:</h1>
-        { countriesData.map(({ nome, localizacao }, index) => (
-          <div key={ index }>
+        { countriesData.map(({ nome, localizacao, id, flag }) => (
+          <div key={ id['M49'] }>
             <h2>{ nome.abreviado }</h2>
+            <img
+              src={ flag }
+              alt={ id['ISO-3166-1-ALPHA-3'] }
+            />
+            <p>{ nome['abreviado-EN'] }</p>
             <p>{ localizacao['sub-regiao'].nome }</p>
           </div>
         )) }

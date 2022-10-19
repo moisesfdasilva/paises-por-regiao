@@ -1,5 +1,15 @@
 API:
 Flags:
 https://www.countryflagsapi.com/
+  Endpoint
+  https://countryflagsapi.com/:filetype/:code
+  :filetype: png or svg
+  :code: refer to the cards below
+  Examples
+  https://countryflagsapi.com/png/br
+  https://countryflagsapi.com/png/brazil
+  https://countryflagsapi.com/svg/076
+  https://countryflagsapi.com/svg/bra
+
 Countries:
 https://servicodados.ibge.gov.br/api/v1/paises
