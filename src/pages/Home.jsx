@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Home() {
   const [continentsObj, setContinentsObj] = useState({
@@ -26,8 +27,12 @@ function Home() {
         >América</h2>
           { (enableAmerica) && (
             <section>
-              <h4>Norte</h4>
-              <h4>Latina e Caribe</h4>
+              <Link to={ '/continent/north-america' } >
+                <h4>Norte</h4>
+              </Link>
+              <Link to={ '/continent/latin-america' } >
+                <h4>Latina e Caribe</h4>
+              </Link>
             </section>
           )}
         <h2
