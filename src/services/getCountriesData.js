@@ -34,3 +34,21 @@ const getCountriesData = async () => {
 };
 
 export default getCountriesData;
+
+// América Latina e Caribe419
+// América do Norte21
+// Europa meridional (Sul da Europa)39
+// Europa ocidental (Oeste da Europa)155
+// Europa oriental (Leste da Europa)151
+// Europa setentrional (Norte da Europa)154
+// África subsaariana202
+// África setentrional (Norte da África)15
+// Ásia ocidental (Oeste da Ásia)145
+// Ásia central143
+// Ásia meridional (Sul da Ásia)34
+// Sudeste da Ásia35
+// Ásia oriental (Leste da Ásia)30
+// Austrália e Nova Zelândia53
+// Melanésia54
+// Micronésia57
+// Polinésia61

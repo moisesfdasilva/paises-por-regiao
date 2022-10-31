@@ -1,13 +1,36 @@
 import React, { useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import CountriesContext from './CountriesContext';
+import getCountriesData from '../services/getCountriesData';
 
 function CountriesProvider({ children }) {
-  const [dataResult, setDataResult] = useState([]);
+  const [countriesObj, setCountriesObj] = useState({
+    isLoading: true,
+    countriesListBase: [],
+    countriesListByRegion: [],
+  });
+
+  const getCountries = async () => {
+    const results = await getCountriesData()
+    setCountriesObj((state) => ({
+      ...state,
+      isLoading: false,
+      countriesListBase: [...results],
+    }));
+  };
+
+  const modifyCountriesListByRegion = (list) => {
+    setCountriesObj((state) => ({
+      ...state,
+      countriesListByRegion: [...list],
+    }));
+  };
+
   const contextValue = useMemo(() => ({
-    dataResult,
-    setDataResult,
-  }), [dataResult, setDataResult,]);
+    ...countriesObj,
+    getCountries,
+    modifyCountriesListByRegion,
+  }), [countriesObj]);
 
   return (
     <main>
