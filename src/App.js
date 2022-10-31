@@ -1,10 +1,11 @@
-import React from "react";
+import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
-import Continent from "./pages/Continent";
+import ContinentRegion from './pages/ContinentRegion';
 import NotFound from './pages/NotFound';
-import CountriesProvider from "./context/CountriesProvider";
+import Country from './pages/Country';
+import CountriesProvider from './context/CountriesProvider';
 
 class App extends React.Component {
   render() {
@@ -12,7 +13,8 @@ class App extends React.Component {
       <CountriesProvider>
         <Switch>
           <Route exact path='/' component={ Home }/>
-          <Route path='/continent/:id' component={ Continent }/>
+          <Route exact path='/continent/:region' component={ ContinentRegion }/>
+          <Route path='/continent/:region/:id' component={ Country }/>
           <Route path='*' component={ NotFound }/>
         </Switch>
       </CountriesProvider>

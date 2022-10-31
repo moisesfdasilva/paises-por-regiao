@@ -8,6 +8,7 @@ function CountriesProvider({ children }) {
     isLoading: true,
     countriesListBase: [],
     countriesListByRegion: [],
+    country: {},
   });
 
   const getCountries = async () => {
