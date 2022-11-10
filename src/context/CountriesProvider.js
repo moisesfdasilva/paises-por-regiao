@@ -27,10 +27,18 @@ function CountriesProvider({ children }) {
     }));
   };
 
+  const modifyCountry = (countryInfo) => {
+    setCountriesObj((state) => ({
+      ...state,
+      country: countryInfo,
+    }));
+  };
+
   const contextValue = useMemo(() => ({
     ...countriesObj,
     getCountries,
     modifyCountriesListByRegion,
+    modifyCountry,
   }), [countriesObj]);
 
   return (

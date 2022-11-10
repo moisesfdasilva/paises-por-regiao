@@ -3,14 +3,15 @@ import { useHistory } from 'react-router-dom';
 import CountriesContext from '../context/CountriesContext';
 
 function ContinentRegion() {
-  const { countriesListByRegion } = useContext(CountriesContext);
+  const { countriesListByRegion, modifyCountry } = useContext(CountriesContext);
   const history = useHistory();
 
   const selectCountry = (countryId) => {
     const { location: { pathname } } = history;
-    const newList = countriesListByRegion.find(({ id }) => (
+    const newCountry = countriesListByRegion.find(({ id }) => (
       id.M49 === Number(countryId)));
-    console.log(newList);
+    modifyCountry(newCountry);
+    console.log(newCountry);
     history.push(`${pathname}/${countryId}`);
   };
 
