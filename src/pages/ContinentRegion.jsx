@@ -11,7 +11,6 @@ function ContinentRegion() {
     const newCountry = countriesListByRegion.find(({ id }) => (
       id.M49 === Number(countryId)));
     modifyCountry(newCountry);
-    console.log(newCountry);
     history.push(`${pathname}/${countryId}`);
   };
 
