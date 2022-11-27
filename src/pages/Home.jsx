@@ -2,6 +2,8 @@ import React, { useState, useContext, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import CountriesContext from '../context/CountriesContext';
 
+import Header from '../components/Header';
+
 function Home() {
   const { isLoading, getCountries, countriesListBase,
     modifyCountriesListByRegion } = useContext(CountriesContext);
@@ -34,20 +36,34 @@ function Home() {
 
   if (isLoading) { return <h1>Loading...</h1>; }
   return (
-    <article>
+    <section>
+      <Header />
       <h1>Continentes:</h1>
-      <h2
-        onClick={ () => selectContinent('enableAmerica', enableAmerica) }
-      >América</h2>
+      <div style={ { cursor:'pointer'} }>
+        <h2 onClick={ () => selectContinent('enableAmerica', enableAmerica) } >
+          <span>America</span>
+          { (!enableAmerica) && (<span> ▾</span>) }
+          { (enableAmerica) && (<span> ▴</span>) }
+        </h2>
         { (enableAmerica) && (
           <section>
-            <h4 onClick={ () => selectRegion(21) }>Norte</h4>
-            <h4 onClick={ () => selectRegion(419) }>Latina e Caribe</h4>
+            <h4 onClick={ () => selectRegion(21) }>
+              Norte
+            </h4>
+            <h4 onClick={ () => selectRegion(419) }>
+              Latina e Caribe
+            </h4>
           </section>
         )}
+      </div>
       <h2
         onClick={ () => selectContinent('enableEurope', enableEurope) }
-      >Europa</h2>
+        style={ { cursor:'pointer'} }
+      >
+        <span>Europa</span>
+        { (!enableEurope) && (<span> ▾</span>) }
+        { (enableEurope) && (<span> ▴</span>) }
+      </h2>
         { (enableEurope) && (
           <section>
             <h4 onClick={ () => selectRegion(39) }>Meridional (Sul da Europa)</h4>
@@ -90,7 +106,7 @@ function Home() {
           </section>
         )}
       <h2>Antartida</h2>
-    </article>
+    </section>
   );
 }
 
