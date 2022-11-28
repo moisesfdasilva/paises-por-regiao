@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import CountriesContext from '../context/CountriesContext';
 
+import Header from '../components/Header';
+
 function ContinentRegion() {
   const { countriesListByRegion, modifyCountry } = useContext(CountriesContext);
   const history = useHistory();
@@ -16,6 +18,7 @@ function ContinentRegion() {
 
   return (
     <article>
+      <Header />
       <h1>{ countriesListByRegion[0].localizacao['sub-regiao'].nome }</h1>
       { countriesListByRegion.map(({ nome, id, flag }) => (
         <div

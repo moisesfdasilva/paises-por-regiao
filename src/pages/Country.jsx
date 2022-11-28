@@ -1,6 +1,8 @@
 import React, { useContext, useEffect } from 'react';
 import CountriesContext from '../context/CountriesContext';
 
+import Header from '../components/Header';
+
 function Country() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   const { country } = useContext(CountriesContext);
@@ -19,6 +21,7 @@ function Country() {
   const formatNumber = new Intl.NumberFormat();
   return (
     <article>
+      <Header />
       <h1>
         { `${nome.abreviado} (${id['ISO-3166-1-ALPHA-2']}/` }
         { `${id['ISO-3166-1-ALPHA-3']})` }
