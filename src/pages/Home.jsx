@@ -44,86 +44,137 @@ function Home() {
   return (
     <section>
       <Header />
-      <div style={ { paddingTop: '100px' } }>
-        <h1>Continentes:</h1>
-        <div style={ { cursor:'pointer'} }>
-          <h2 onClick={ () => selectContinent('enableAmerica', enableAmerica) } >
-            <img className="ui mini image" src={ americaImg } alt="americaImg"/>
-            <span>America</span>
-            { (!enableAmerica) && (<span> ▾</span>) }
-            { (enableAmerica) && (<span> ▴</span>) }
-          </h2>
-          { (enableAmerica) && (
-            <section>
-              <h4 onClick={ () => selectRegion(21) }>
-                Norte
-              </h4>
-              <h4 onClick={ () => selectRegion(419) }>
-                Latina e Caribe
-              </h4>
-            </section>
-          )}
+      <div style={ { paddingTop: '95px' } }>
+        <div>
+          <h1>Continentes:</h1>
+          <p>Escolha o continete e em seguida a respectiva região.</p>
         </div>
-        <h2
-          onClick={ () => selectContinent('enableEurope', enableEurope) }
-          style={ { cursor:'pointer'} }
-        >
-          <img className="ui mini image" src={ europeImg } alt="europeImg"/>
-          <span>Europa</span>
-          { (!enableEurope) && (<span> ▾</span>) }
-          { (enableEurope) && (<span> ▴</span>) }
-        </h2>
+        <div className="ui fluid vertical menu">
+          <div
+            className="item"
+            style={ { cursor:'pointer'} }
+            onClick={ () => selectContinent('enableAmerica', enableAmerica) }
+          >
+            <div className="ui equal width center aligned padded grid">
+              <div className="column middle aligned">
+                <img className="ui mini image" src={ americaImg } alt="americaImg"/>
+              </div>
+              <div className="column middle aligned"><h3>América</h3></div>
+              <div className="column middle aligned">
+                { (!enableAmerica) && (<h3> ▾</h3>) }
+                { (enableAmerica) && (<h3> ▴</h3>) }
+              </div>
+            </div>
+          </div>
+          { (enableAmerica) && (
+            <div className="item" style={ { cursor:'pointer' } }>
+              <h4 onClick={ () => selectRegion(21) }>Norte</h4>
+              <h4 onClick={ () => selectRegion(419) }>Latina e Caribe</h4>
+            </div>
+          ) }
+          <div
+            className="item"
+            style={ { cursor:'pointer' } }
+            onClick={ () => selectContinent('enableEurope', enableEurope) }
+          >
+            <div className="ui equal width center aligned padded grid">
+              <div className="column middle aligned">
+                <img className="ui mini image" src={ europeImg } alt="europeImg"/>
+              </div>
+              <div className="column middle aligned"><h3>Europa</h3></div>
+              <div className="column middle aligned">
+                { (!enableEurope) && (<h3> ▾</h3>) }
+                { (enableEurope) && (<h3> ▴</h3>) }
+              </div>
+            </div>
+          </div>
           { (enableEurope) && (
-            <section>
+            <div className="item" style={ { cursor:'pointer' } }>
               <h4 onClick={ () => selectRegion(39) }>Meridional (Sul da Europa)</h4>
               <h4 onClick={ () => selectRegion(155) }>Ocidental (Oeste da Europa)</h4>
               <h4 onClick={ () => selectRegion(151) }>Oriental (Leste da Europa)</h4>
               <h4 onClick={ () => selectRegion(154) }>Setentrional (Norte da Europa)</h4>
-            </section>
-          )}
-        <h2
-          onClick={ () => selectContinent('enableAfrica', enableAfrica) }
-        >
-          <img className="ui mini image" src={ africaImg } alt="africaImg"/>
-          África
-        </h2>
+            </div>
+          ) }
+          <div
+            className="item"
+            style={ { cursor:'pointer' } }
+            onClick={ () => selectContinent('enableAfrica', enableAfrica) }
+          >
+            <div className="ui equal width center aligned padded grid">
+              <div className="column middle aligned">
+                <img className="ui mini image" src={ africaImg } alt="africaImg"/>
+              </div>
+              <div className="column middle aligned"><h3>África</h3></div>
+              <div className="column middle aligned">
+                { (!enableAfrica) && (<h3> ▾</h3>) }
+                { (enableAfrica) && (<h3> ▴</h3>) }
+              </div>
+            </div>
+          </div>
           { (enableAfrica) && (
-            <section>
+            <div className="item" style={ { cursor:'pointer' } }>
               <h4 onClick={ () => selectRegion(202) }>Setentrional (Norte da África)</h4>
               <h4 onClick={ () => selectRegion(15) }>Subsaariana</h4>
-            </section>
-          )}
-        <h2
-          onClick={ () => selectContinent('enableAsia', enableAsia) }
-        >
-          <img className="ui mini image" src={ asiaImg } alt="asiaImg"/>
-          Ásia
-        </h2>
+            </div>
+          ) }
+          <div
+            className="item"
+            style={ { cursor:'pointer' } }
+            onClick={ () => selectContinent('enableAsia', enableAsia) }
+          >
+            <div className="ui equal width center aligned padded grid">
+              <div className="column middle aligned">
+                <img className="ui mini image" src={ asiaImg } alt="asiaImg"/>
+              </div>
+              <div className="column middle aligned"><h3>Ásia</h3></div>
+              <div className="column middle aligned">
+                { (!enableAsia) && (<h3> ▾</h3>) }
+                { (enableAsia) && (<h3> ▴</h3>) }
+              </div>
+            </div>
+          </div>
           { (enableAsia) && (
-            <section>
-              <h4>Central</h4>
+            <div className="item" style={ { cursor:'pointer' } }>
               <h4 onClick={ () => selectRegion(34) }>Meridional (Sul da Ásia)</h4>
               <h4 onClick={ () => selectRegion(145) }>Ocidental (Oeste da Ásia)</h4>
               <h4 onClick={ () => selectRegion(143) }>Ásia central</h4>
               <h4 onClick={ () => selectRegion(30) }>Oriental (Leste da Ásia)</h4>
               <h4 onClick={ () => selectRegion(35) }>Sudeste</h4>
-            </section>
-          )}
-        <h2
-          onClick={ () => selectContinent('enableOceania', enableOceania) }
-        >
-          <img className="ui mini image" src={ oceaniaImg } alt="oceaniaImg"/>
-          Oceânia
-        </h2>
+            </div>
+          ) }
+          <div
+            className="item"
+            style={ { cursor:'pointer' } }
+            onClick={ () => selectContinent('enableOceania', enableOceania) }
+          >
+            <div className="ui equal width center aligned padded grid">
+              <div className="column middle aligned">
+                <img className="ui mini image" src={ oceaniaImg } alt="oceaniaImg"/>
+              </div>
+              <div className="column middle aligned"><h3>Oceânia</h3></div>
+              <div className="column middle aligned">
+                { (!enableOceania) && (<h3> ▾</h3>) }
+                { (enableOceania) && (<h3> ▴</h3>) }
+              </div>
+            </div>
+          </div>
           { (enableOceania) && (
-            <section>
+            <div className="item" style={ { cursor:'pointer' } }>
               <h4 onClick={ () => selectRegion(53) }>Austrália e Nova Zelândia</h4>
               <h4 onClick={ () => selectRegion(54) }>Melanésia</h4>
               <h4 onClick={ () => selectRegion(57) }>Micronésia</h4>
               <h4 onClick={ () => selectRegion(61) }>Polinésia</h4>
-            </section>
-          )}
-        <h2>Antartida</h2>
+            </div>
+          ) }
+          <div className="item">
+            <div className="ui equal width center aligned padded grid">
+              <div className="column middle aligned">
+                <h3>Antartida</h3>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
