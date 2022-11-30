@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import CountriesContext from '../context/CountriesContext';
 
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 function Home() {
   const { isLoading, getCountries, countriesListBase,
@@ -176,6 +177,7 @@ function Home() {
           </div>
         </div>
       </div>
+      <Footer />
     </section>
   );
 }

@@ -15,8 +15,8 @@ function Header() {
   }
 
   return (
-    <section className="ui fixed inverted menu">
-      <section className="ui container">
+    <header className="ui fixed inverted menu">
+      <nav className="ui container">
         <div className="header item">
           <div className="ui tiny image">
             <img className="ui tiny image" src={ worldMap } alt="World Map"/>
@@ -86,11 +86,9 @@ function Header() {
           <i className="brazil flag"></i>
           pt-BR
         </div>
-      </section>
-    </section>
+      </nav>
+    </header>
   )
 }
 
 export default Header;
-
-// style={ { backgroundColor:'#E0FFFF' } }
