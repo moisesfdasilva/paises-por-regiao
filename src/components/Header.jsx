@@ -82,10 +82,7 @@ function Header() {
             <Link to="/notfound" className="item">Antartida</Link>
           </div>
         </div>
-        <div className="right item">
-          <i className="brazil flag"></i>
-          pt-BR
-        </div>
+        <div className="right item"><i className="brazil flag" />pt-BR</div>
       </nav>
     </header>
   )
