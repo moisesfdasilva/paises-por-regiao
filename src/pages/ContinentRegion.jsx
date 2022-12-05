@@ -28,7 +28,7 @@ function ContinentRegion() {
         { countriesListByRegion.map(({ nome, id, flag }) => (
           <div className="grey card" key={ id.M49 } onClick={ () => selectCountry(id.M49) }>
             <img className="ui medium image" src={ flag } alt={ id['ISO-3166-1-ALPHA-3'] }/>
-            <h2 class="header">{ nome.abreviado }</h2>
+            <h2 className="header">{ nome.abreviado }</h2>
             <p>{ nome['abreviado-EN'] }</p>
           </div>
         )) }

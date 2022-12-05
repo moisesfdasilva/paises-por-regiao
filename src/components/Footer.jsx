@@ -7,7 +7,7 @@ function Footer() {
         <div className="wide column">
           <p>
             Esta aplicação foi desenvolvida com o intuíto de proporcionar ao usuário 
-            conhecer de detalhes dos paises selecionados, de acordo com a região de cada continente, 
+            conhecer os detalhes dos paises selecionados, de acordo com a região de cada continente, 
             conforme dados publicados pelo IBGE.
           </p>
         </div>
