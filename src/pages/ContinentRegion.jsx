@@ -1,10 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import CountriesContext from '../context/CountriesContext';
 
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 function ContinentRegion() {
+  useEffect(() => { window.scrollTo(0, 0); }, []);
   const { countriesListByRegion, modifyCountry } = useContext(CountriesContext);
   const history = useHistory();
 
@@ -19,20 +21,19 @@ function ContinentRegion() {
   return (
     <article>
       <Header />
-      <h1>{ countriesListByRegion[0].localizacao['sub-regiao'].nome }</h1>
-      { countriesListByRegion.map(({ nome, id, flag }) => (
-        <div
-          key={ id.M49 }
-          onClick={ () => selectCountry(id.M49) }
-        >
-          <h2>{ nome.abreviado }</h2>
-          <img
-            src={ flag }
-            alt={ id['ISO-3166-1-ALPHA-3'] }
-          />
-          <p>{ nome['abreviado-EN'] }</p>
-        </div>
-      )) }
+      <div style={ { paddingTop: '95px', paddingLeft: '15px', paddingBottom: '15px' } }>
+        <h1>{ countriesListByRegion[0].localizacao['sub-regiao'].nome }</h1>
+      </div>
+      <div className="ui link cards" style={ { paddingLeft: '15px', paddingBottom: '15px' } }>
+        { countriesListByRegion.map(({ nome, id, flag }) => (
+          <div className="grey card" key={ id.M49 } onClick={ () => selectCountry(id.M49) }>
+            <img className="ui medium image" src={ flag } alt={ id['ISO-3166-1-ALPHA-3'] }/>
+            <h2 class="header">{ nome.abreviado }</h2>
+            <p>{ nome['abreviado-EN'] }</p>
+          </div>
+        )) }
+      </div>
+      <Footer />
     </article>
   );
 }
