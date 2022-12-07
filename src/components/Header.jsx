@@ -22,7 +22,7 @@ function Header() {
             <img className="ui tiny image" src={ worldMap } alt="World Map"/>
           </div>
           <div className="middle aligned content">
-            <h3 className="header">Paises por região</h3>
+            <h3 className="header">Países por região</h3>
           </div>
         </div>
         <Link to="/" className="item">
